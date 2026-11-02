@@ -2,6 +2,8 @@
 
 A compact, English-language directory of active Hacker News projects.
 
+**[Browse the directory →](https://awesome-hn.pages.dev)**
+
 Three columns, two levels of categories, short descriptions, and search. No accounts, submission form, analytics, or runtime dependencies. All links work without JavaScript.
 
 ## Directory
