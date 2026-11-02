@@ -32,6 +32,7 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 - [blogs.hn](https://blogs.hn/) — Personal blogs from HN readers, with feeds.
 - [Hacker News Daily](https://www.daemonology.net/hn-daily/) — Ten top stories a day, without repeat links.
 - [HackerBlogs](https://hackerblogs.app/) — Find the blogs and writers HN keeps sharing.
+- [HN Popularity Contest](https://popularity.refactoringenglish.com/) — The highest-ranking personal blogs of Hacker News.
 
 ### HN readers
 
