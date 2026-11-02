@@ -269,21 +269,21 @@
       "domainRating": null
     },
     {
-      "id": "hackertools",
-      "name": "HackerTools",
-      "category": "products",
-      "url": "https://shouvik12.github.io/hackertools/",
-      "description": "Developer tools recommended by distinct HN commenters.",
+      "id": "f5bot",
+      "name": "F5Bot",
+      "category": "search",
+      "url": "https://f5bot.com/",
+      "description": "Email alerts when your keywords are mentioned on Hacker News.",
       "activity": {
-        "type": "launch",
+        "type": "content",
         "date": "2026-11-02",
-        "url": "https://news.ycombinator.com/item?id=50328349",
-        "note": "Creator announced the tool in the reference thread; catalog and source checked."
+        "url": "https://f5bot.com/",
+        "note": "Live keyword monitoring service for Hacker News verified active on the review date."
       },
       "popularity": {
-        "type": "editor_pick",
-        "url": "https://news.ycombinator.com/item?id=50328349",
-        "note": "Emerging project selected from the HackerBooks discussion; no popularity threshold or DR score is claimed."
+        "type": "hn_points",
+        "value": 78,
+        "url": "https://news.ycombinator.com/item?id=18193360"
       },
       "domainRating": null
     },

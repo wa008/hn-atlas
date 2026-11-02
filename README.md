@@ -42,13 +42,13 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 ### Product discovery
 
 - [HackerProducts](https://hackerproducts.pages.dev/) — Software HN users recommend, with the comments behind it.
-- [HackerTools](https://shouvik12.github.io/hackertools/) — Developer tools recommended by distinct HN commenters.
 - [trustmebro · HN](https://www.trustmebro.reviews/r/hackernews) — Explore product opinions extracted from HN discussions.
 
 ### Search & feeds
 
 - [HN Search](https://hn.algolia.com/) — Full-text search across HN stories and comments.
 - [HN RSS](https://hnrss.github.io/) — Custom feeds for keywords, points, and replies.
+- [F5Bot](https://f5bot.com/) — Email alerts when your keywords are mentioned on Hacker News.
 
 ### Jobs
 
