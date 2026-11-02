@@ -10,6 +10,8 @@ test('A URL-only suggestion is accepted, but cannot publish without a moderator 
   assert.throws(()=>validateSubmission(draft,{requireCategory:true}),/category before publishing/);
   assert.equal(validateSubmission({...draft,category:'books'},{requireCategory:true}).category,'books');
   assert.equal(validateSubmission({...draft,name:'X',description:'My pick.'}).description,'My pick.');
+  assert.equal(validateSubmission({...draft,category:'blogs'},{requireCategory:true}).category,'reading');
+  assert.equal(validateSubmission({...draft,category:'rss'},{requireCategory:true}).category,'search');
 });
 test('Metadata reads quoted attributes in either order, entities, and title fallbacks',()=>{
   const html='<title>A longer title</title><meta content="Small &amp; Useful" property="og:site_name"><meta name="description" content="A calm place&#10;to find useful links.">';

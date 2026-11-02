@@ -31,10 +31,11 @@
   <dialog id="submit-dialog" aria-labelledby="submit-title">
     <button id="close-submit" class="close-dialog" aria-label="Close submission form">×</button>
     <p class="dialog-kicker">ADD TO THE ATLAS</p><h2 id="submit-title">Found a good corner?</h2>
-    <p class="form-intro">Just send the link. We’ll fill in a draft for review.</p>
+    <p class="form-intro">Paste a URL. Add a name or description if you like.</p>
     <form id="submit-form">
-      <label>Website URL<input name="url" type="url" required maxlength="1000" placeholder="https://" autocomplete="url" autofocus></label>
-      <details class="optional-fields"><summary>Add a name or description <span>(optional)</span></summary><div><label>Site name<input name="name" maxlength="60" autocomplete="off" placeholder="Leave blank to auto-fill"></label><label>One-line description<input name="description" maxlength="100" placeholder="What makes it useful?"></label></div></details>
+      <label><span class="field-heading"><span>Website URL</span><span class="field-status">Required</span></span><input name="url" type="url" required maxlength="1000" placeholder="https://" autocomplete="url" autofocus></label>
+      <label><span class="field-heading"><span>Site name</span><span class="field-status">Optional</span></span><input name="name" maxlength="60" autocomplete="off" placeholder="Leave blank to auto-fill"></label>
+      <label><span class="field-heading"><span>One-line description</span><span class="field-status">Optional</span></span><input name="description" maxlength="100" placeholder="What makes it useful?"></label>
       <div class="form-trap" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
       <button class="submit-button" type="submit">Send for review <span aria-hidden="true">↗</span></button>
       <p class="submission-notice">No account or email needed. Suggestions are reviewed publicly on GitHub.</p>

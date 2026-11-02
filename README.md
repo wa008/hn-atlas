@@ -9,11 +9,13 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 ## Directory
 
 <!-- DIRECTORY:START -->
-### Books
+### Books & knowledge
 
 - [HackerBooks](https://hackerbooks.org/) — Books mentioned on HN, with the original discussions.
+- [WikiHack](https://wikihack.netlify.app/) — Wikipedia rabbit holes linked in HN comments.
+- [OrangeCrumbs](https://www.orangecrumbs.com/) — HN link history, Wikipedia discoveries, and a hall of fame.
 
-### Videos
+### Videos & film
 
 - [HackerTube](https://hackertube.org/) — YouTube videos discovered in HN recommendations.
 - [HackerFilms](https://hackerfilms.pages.dev/) — Movies discussed on HN, linked to their conversations.
@@ -22,24 +24,17 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 
 - [HN Arcade](https://hnarcade.com/games/category/games) — Independent games shared by the HN community.
 
-### Knowledge
-
-- [WikiHack](https://wikihack.netlify.app/) — Wikipedia rabbit holes linked in HN comments.
-- [OrangeCrumbs](https://www.orangecrumbs.com/) — HN link history, Wikipedia discoveries, and a hall of fame.
-
-### Blogs
+### Blogs & digests
 
 - [blogs.hn](https://blogs.hn/) — Personal blogs from HN readers, with feeds.
+- [Hacker News Daily](https://www.daemonology.net/hn-daily/) — Ten top stories a day, without repeat links.
 - [HackerBlogs](https://hackerblogs.app/) — Find the blogs and writers HN keeps sharing.
 
-### Readers
+### HN readers
 
 - [hckr news](https://hckrnews.com/) — A compact, chronological view of Hacker News.
 - [Hacki](https://github.com/Livinglist/Hacki) — An open-source HN reader for iOS and Android.
-
-### Daily digests
-
-- [Hacker News Daily](https://www.daemonology.net/hn-daily/) — Ten top stories a day, without repeat links.
+- [Circumflex](https://github.com/bensadeh/circumflex) — Read HN from your terminal, with article previews.
 
 ### Product discovery
 
@@ -47,21 +42,14 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 - [HackerTools](https://shouvik12.github.io/hackertools/) — Developer tools recommended by distinct HN commenters.
 - [trustmebro · HN](https://www.trustmebro.reviews/r/hackernews) — Explore product opinions extracted from HN discussions.
 
-### Search
+### Search & feeds
 
 - [HN Search](https://hn.algolia.com/) — Full-text search across HN stories and comments.
-
-### RSS
-
 - [HN RSS](https://hnrss.github.io/) — Custom feeds for keywords, points, and replies.
 
 ### Jobs
 
 - [HN Hiring](https://hnhiring.com/) — Search jobs from the monthly Who Is Hiring threads.
-
-### Terminal
-
-- [Circumflex](https://github.com/bensadeh/circumflex) — Read HN from your terminal, with article previews.
 
 <!-- DIRECTORY:END -->
 
@@ -120,7 +108,7 @@ Descriptions are independently written. This directory is not affiliated with Ha
 
 ## Anonymous suggestions and review
 
-1. A visitor submits only a **website URL**, without a login or email address. Site name and description are optional, behind an expandable field. Category is assigned during moderation.
+1. A visitor submits only a **website URL**, without a login or email address. Site name and description are optional and shown alongside the URL using the same field layout. Category is assigned during moderation.
 2. The Pages Function validates the suggestion and stores a receipt in D1. Same-day duplicate URLs are deduplicated; a hashed-IP limit and a honeypot reduce spam. The public endpoint does not fetch the URL. A background GitHub job reads bounded HTML metadata using validated, pinned public IP addresses and checks redirects.
 3. [`Review site submissions`](.github/workflows/submissions.yml) checks the queue on pushes, manual runs, and a five-minute schedule. GitHub may delay scheduled jobs. The workflow fills missing name and description from Open Graph metadata, the page title, or a hostname fallback. It creates an Issue labeled `submission` with an editable JSON draft and identifies generated fields.
 4. A maintainer checks the generated text and URL, **sets a category** in the Issue JSON, and then applies **approved**. Missing category blocks publication. This is an explicit editorial sign-off on availability and relevance.

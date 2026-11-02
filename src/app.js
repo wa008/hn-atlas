@@ -5,7 +5,10 @@ const categories=[...document.querySelectorAll('.category')];
 const categorySelect=document.querySelector('#category-select');
 const status=document.querySelector('#result-status');
 const url=new URL(location.href);
-let selected=buttons.some(button=>button.dataset.filter===url.searchParams.get('category'))?url.searchParams.get('category'):'all';
+const legacyCategories={knowledge:'books',blogs:'reading',digests:'reading',terminal:'readers',rss:'search'};
+const requested=url.searchParams.get('category');
+const initial=Object.hasOwn(legacyCategories,requested)?legacyCategories[requested]:requested;
+let selected=buttons.some(button=>button.dataset.filter===initial)?initial:'all';
 search.value=url.searchParams.get('q')||'';
 function filterSites(){
   const query=search.value.trim().toLowerCase();let matches=0;

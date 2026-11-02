@@ -62,7 +62,7 @@
     {
       "id": "wikihack",
       "name": "WikiHack",
-      "category": "knowledge",
+      "category": "books",
       "url": "https://wikihack.netlify.app/",
       "description": "Wikipedia rabbit holes linked in HN comments.",
       "activity": {
@@ -81,7 +81,7 @@
     {
       "id": "blogs-hn",
       "name": "blogs.hn",
-      "category": "blogs",
+      "category": "reading",
       "url": "https://blogs.hn/",
       "description": "Personal blogs from HN readers, with feeds.",
       "activity": {
@@ -138,7 +138,7 @@
     {
       "id": "hn-daily",
       "name": "Hacker News Daily",
-      "category": "digests",
+      "category": "reading",
       "url": "https://www.daemonology.net/hn-daily/",
       "description": "Ten top stories a day, without repeat links.",
       "activity": {
@@ -176,7 +176,7 @@
     {
       "id": "hn-rss",
       "name": "HN RSS",
-      "category": "rss",
+      "category": "search",
       "url": "https://hnrss.github.io/",
       "description": "Custom feeds for keywords, points, and replies.",
       "activity": {
@@ -214,7 +214,7 @@
     {
       "id": "circumflex",
       "name": "Circumflex",
-      "category": "terminal",
+      "category": "readers",
       "url": "https://github.com/bensadeh/circumflex",
       "description": "Read HN from your terminal, with article previews.",
       "activity": {
@@ -233,7 +233,7 @@
     {
       "id": "hackerblogs",
       "name": "HackerBlogs",
-      "category": "blogs",
+      "category": "reading",
       "url": "https://hackerblogs.app/",
       "description": "Find the blogs and writers HN keeps sharing.",
       "activity": {
@@ -328,7 +328,7 @@
     {
       "id": "orangecrumbs",
       "name": "OrangeCrumbs",
-      "category": "knowledge",
+      "category": "books",
       "url": "https://www.orangecrumbs.com/",
       "description": "HN link history, Wikipedia discoveries, and a hall of fame.",
       "activity": {
@@ -348,31 +348,23 @@
   "categories": [
     {
       "id": "books",
-      "name": "Books"
+      "name": "Books & knowledge"
     },
     {
       "id": "videos",
-      "name": "Videos"
+      "name": "Videos & film"
     },
     {
       "id": "games",
       "name": "Games"
     },
     {
-      "id": "knowledge",
-      "name": "Knowledge"
-    },
-    {
-      "id": "blogs",
-      "name": "Blogs"
+      "id": "reading",
+      "name": "Blogs & digests"
     },
     {
       "id": "readers",
-      "name": "Readers"
-    },
-    {
-      "id": "digests",
-      "name": "Daily digests"
+      "name": "HN readers"
     },
     {
       "id": "products",
@@ -380,19 +372,11 @@
     },
     {
       "id": "search",
-      "name": "Search"
-    },
-    {
-      "id": "rss",
-      "name": "RSS"
+      "name": "Search & feeds"
     },
     {
       "id": "jobs",
       "name": "Jobs"
-    },
-    {
-      "id": "terminal",
-      "name": "Terminal"
     }
   ]
 }

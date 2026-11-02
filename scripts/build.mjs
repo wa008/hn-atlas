@@ -27,14 +27,14 @@ for(const site of data.sites){
 const count=category=>data.sites.filter(site=>site.category===category).length;
 const filters=data.categories.filter(category=>count(category.id)).map(category=>`<button class="category-nav" data-filter="${escape(category.id)}" aria-pressed="false"><span>${escape(category.name)}</span><span class="nav-count">${String(count(category.id)).padStart(2,'0')}</span></button>`).join('');
 const options=data.categories.filter(category=>count(category.id)).map(category=>`<option value="${escape(category.id)}">${escape(category.name)} (${count(category.id)})</option>`).join('');
-const directory=data.categories.map((category,index)=>{
+const directory=data.categories.map(category=>{
   const sites=data.sites.filter(site=>site.category===category.id);if(!sites.length)return '';
   const entries=sites.map(site=>{
     const host=new URL(site.url).hostname.replace(/^www\./,'');
     const source=site.popularity.url.includes('news.ycombinator.com/item')?'Discussion':'Source';
     return `<li class="site-item" data-category="${escape(category.id)}" data-search="${escape(`${site.name} ${site.description} ${category.name} ${site.url}`.toLowerCase())}"><a class="site-link" href="${escape(site.url)}" target="_blank" rel="noopener noreferrer"><span class="site-name">${escape(site.name)}<span class="site-arrow" aria-hidden="true">↗</span></span><span class="site-description">${escape(site.description)}</span></a><div class="site-meta"><span>${escape(host)}</span><span aria-hidden="true">·</span><a href="${escape(site.popularity.url)}" target="_blank" rel="noopener noreferrer">${source} ↗</a></div></li>`;
   }).join('');
-  return `<section class="category" aria-labelledby="category-${escape(category.id)}"><div class="category-heading"><h2 id="category-${escape(category.id)}"><span class="category-number" aria-hidden="true">${String(index+1).padStart(2,'0')}</span>${escape(category.name)}</h2><span class="category-count">${sites.length} ${sites.length===1?'site':'sites'}</span></div><ul class="site-list">${entries}</ul></section>`;
+  return `<section class="category" aria-labelledby="category-${escape(category.id)}"><div class="category-heading"><h2 id="category-${escape(category.id)}">${escape(category.name)}</h2><span class="category-count">${sites.length} ${sites.length===1?'site':'sites'}</span></div><ul class="site-list">${entries}</ul></section>`;
 }).join('');
 const template=await readFile(new URL('../src/index.html',import.meta.url),'utf8');
 const date=new Date(`${data.reviewedOn}T12:00:00Z`).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
