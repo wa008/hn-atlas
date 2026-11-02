@@ -1,6 +1,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
-import {validateSubmission} from '../lib/submission.js';
+import {validateSubmission,CATEGORY_IDS} from '../lib/submission.js';
+import {enrichSubmission} from './site-metadata.mjs';
 const repo='wa008/awesome-hn';
 const token=process.env.GH_TOKEN;if(!token)throw new Error('GitHub workflow token required');
 const event=JSON.parse(await readFile(process.env.GITHUB_EVENT_PATH,'utf8'));
@@ -15,8 +16,8 @@ async function intake(){
   await ensureLabels();
   let issues=[];for(let page=1;page<=10;page++){const batch=await github(`/issues?state=all&labels=submission&per_page=100&page=${page}`);issues.push(...batch);if(batch.length<100)break;}
   for(const item of submissions){
-    const site=validateSubmission(item);let issue=issues.find(issue=>issue.body?.includes(marker(item.id)));
-    if(!issue){const body=[marker(item.id),'## Anonymous site suggestion','', 'Review the URL, description, category, and source below. Edit the JSON if needed. Add **approved** to publish, or **rejected** to close. Only repository maintainers can approve.','', '```json',JSON.stringify({...site,submissionId:item.id},null,2),'```','', 'Approval confirms that the site is available, directly related to HN, and worth listing. The approval workflow validates the entry before committing it.'].join('\n');issue=await github('/issues','POST',{title:`[Submission] ${site.name}`,body,labels:['submission']});issues.push(issue);}
+    const {site,generated}=await enrichSubmission(item);let issue=issues.find(issue=>issue.body?.includes(marker(item.id)));
+    if(!issue){const body=[marker(item.id),'## Anonymous site suggestion','', 'Review the URL and generated draft below. **Category is required before approval.** Edit the JSON, then add **approved** to publish or **rejected** to close.', '', `Allowed categories: ${CATEGORY_IDS.map(id=>'\u0060'+id+'\u0060').join(', ')}`, '', `Auto-filled draft fields: ${generated.join(', ')||'none (provided by submitter)'}. Check these against the website.`,'', '```json',JSON.stringify({...site,submissionId:item.id},null,2),'```','', 'Approval confirms that the site is available, directly related to HN, and worth listing. The approval workflow validates the entry before committing it.'].join('\n');issue=await github('/issues','POST',{title:`[Submission] ${site.name}`,body,labels:['submission']});issues.push(issue);}
     await queue('POST',{id:item.id,issueNumber:issue.number,status:'reviewing'});console.log(`Queued suggestion ${item.id} → issue #${issue.number}`);
   }
 }
@@ -25,10 +26,11 @@ async function moderate(){
   const actor=event.sender.login;const {permission}=await github(`/collaborators/${encodeURIComponent(actor)}/permission`);if(!['admin','maintain','write'].includes(permission))throw new Error('Only repository maintainers may publish suggestions.');
   if(!issue.labels.some(label=>label.name==='submission')||issue.state!=='open')return;
   const fresh=await github(`/issues/${issue.number}`);const match=fresh.body?.match(/```json\s*\n([\s\S]*?)\n```/);if(!match)throw new Error('Submission JSON is missing.');
-  const proposal=JSON.parse(match[1]);const site=validateSubmission(proposal);const receipt=proposal.submissionId;
+  const proposal=JSON.parse(match[1]);let site=validateSubmission(proposal);const receipt=proposal.submissionId;
   if(!/^[a-f0-9-]{36}$/.test(receipt||'')||!fresh.body.includes(marker(receipt)))throw new Error('Receipt does not match this issue.');
   if(label==='rejected'){await queue('POST',{id:receipt,issueNumber:issue.number,status:'rejected'});await github(`/issues/${issue.number}`,'PATCH',{state:'closed',state_reason:'not_planned'});return;}
   if(!fresh.labels.some(label=>label.name==='approved'))return;
+  site=(await enrichSubmission(validateSubmission(proposal,{requireCategory:true}))).site;
   const path=new URL('../data/sites.json',import.meta.url);const data=JSON.parse(await readFile(path,'utf8'));
   const existing=data.sites.find(entry=>entry.url===site.url||entry.submissionId===receipt);
   if(!existing){

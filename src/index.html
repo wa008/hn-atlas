@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#faf9f6">
-  <meta name="description" content="A small, curated directory of active Hacker News projects. Books, videos, games, readers, and tools.">
-  <title>HN Atlas — Hacker News projects, organized</title>
+  <meta name="theme-color" content="#f6f3ed">
+  <meta name="description" content="A curated field guide to the Hacker News ecosystem. Books, videos, games, readers, and useful little tools.">
+  <title>HN Atlas — A field guide to Hacker News</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/style.css">
   <script src="/app.js" defer></script>
@@ -13,34 +13,31 @@
 <body>
   <a class="skip-link" href="#directory">Skip to directory</a>
   <div class="page">
-    <header>
-      <a class="brand" href="/" aria-label="HN Atlas home"><span class="brand-icon" aria-hidden="true">hn</span><span>hn atlas<span class="dot">.</span></span></a>
-      <div class="header-links"><button id="open-submit" class="submit-link">Suggest a site <span aria-hidden="true">+</span></button><a class="github-link" href="https://github.com/wa008/awesome-hn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1 .1-2-.5-2.5 3.5-.4 6.5-1.7 6.5-6A5 5 0 0 0 19.6 6c.1-1-.1-2-.6-3-1.5 0-3 1-3.5 1.5a13 13 0 0 0-7 0C8 4 6.5 3 5 3c-.5 1-.7 2-.6 3A5 5 0 0 0 3 9.5c0 4.3 3 5.6 6.5 6C9 16 9 17 9 18v4"/></svg><span>GitHub</span><span aria-hidden="true">↗</span></a></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="HN Atlas home"><svg class="brand-symbol" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16"/><path d="M20 1v5M20 34v5M1 20h5M34 20h5M14 26l4-12 8 12-8-4Z"/></svg><span>HN Atlas<span class="brand-dot">.</span></span></a>
+      <span class="header-note">A community field guide</span>
+      <div class="header-links"><button id="open-submit" class="submit-link">Suggest a site <span aria-hidden="true">↗</span></button><a class="github-link" href="https://github.com/wa008/awesome-hn" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
     </header>
     <main>
-      <div class="toolbar">
-        <div class="intro"><h1>A directory for the HN curious.</h1></div>
-        <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" placeholder="Find a site…" aria-label="Search sites" autocomplete="off"><kbd aria-hidden="true">/</kbd></label>
+      <div class="toolbar"><div><h1>Useful corners of Hacker News.</h1><p class="collection-label">Collected from the HN community. <span id="result-status" role="status" aria-live="polite">{{TOTAL}} sites</span></p></div><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" placeholder="Find something useful…" aria-label="Search sites" autocomplete="off"><kbd aria-hidden="true">/</kbd></label></div>
+      <div class="directory-layout">
+        <aside class="category-index"><p class="index-label">INDEX</p><nav aria-label="Categories"><button class="category-nav active" data-filter="all" aria-pressed="true"><span>All sites</span><span class="nav-count">{{TOTAL}}</span></button>{{FILTERS}}</nav><p class="index-note">Collected from the community.<br>Always a link to the source.</p></aside>
+        <label class="mobile-category-label">Browse<select id="category-select" aria-label="Browse categories"><option value="all">All sites ({{TOTAL}})</option>{{OPTIONS}}</select></label>
+        <div class="directory-content"><div id="directory" class="directory">{{DIRECTORY}}</div><div class="empty" id="empty" hidden><h2>Nothing here just yet.</h2><p>Try another name or category.</p><button id="clear-search">Back to all sites ↗</button></div></div>
       </div>
-      <nav class="filters" aria-label="Directory sections"><button class="filter active" data-filter="all" aria-pressed="true">All <span>{{TOTAL}}</span></button>{{FILTERS}}<span class="result-status" id="result-status" role="status" aria-live="polite">{{TOTAL}} sites</span></nav>
-      <div id="directory" class="directory">{{DIRECTORY}}</div>
-      <div class="empty" id="empty" hidden><h2>No matching sites.</h2><p>Try another name or keyword.</p><button id="clear-search">Clear search ↗</button></div>
     </main>
-    <footer><span>{{TOTAL}} sites <span class="footer-dot">·</span> Reviewed <time datetime="{{REVIEW_DATE}}">{{DISPLAY_DATE}}</time></span><div><a href="https://github.com/wa008/awesome-hn/blob/main/CURATION.md" target="_blank" rel="noopener noreferrer">Curation</a><a href="https://github.com/cheeaun/awesome-hacker-news" target="_blank" rel="noopener noreferrer">Reference ↗</a></div></footer>
+    <footer><span class="footer-signature">HN Atlas <span aria-hidden="true">/</span> An independent directory</span><div><span>Reviewed <time datetime="{{REVIEW_DATE}}">{{DISPLAY_DATE}}</time></span><a href="https://github.com/wa008/awesome-hn/blob/main/CURATION.md" target="_blank" rel="noopener noreferrer">How we choose ↗</a></div></footer>
   </div>
   <dialog id="submit-dialog" aria-labelledby="submit-title">
     <button id="close-submit" class="close-dialog" aria-label="Close submission form">×</button>
-    <h2 id="submit-title">Suggest a site</h2>
-    <p class="form-intro">No account needed. Every suggestion is reviewed before publishing.</p>
+    <p class="dialog-kicker">ADD TO THE ATLAS</p><h2 id="submit-title">Found a good corner?</h2>
+    <p class="form-intro">Just send the link. We’ll fill in a draft for review.</p>
     <form id="submit-form">
-      <label>Site name<input name="name" required minlength="2" maxlength="60" autocomplete="off"></label>
-      <label>Website URL<input name="url" type="url" required maxlength="1000" placeholder="https://" autocomplete="url"></label>
-      <label>One-line description<input name="description" required minlength="10" maxlength="100" placeholder="What does it help people do?"></label>
-      <label>Category<select name="category" required><option value="">Choose a category</option>{{OPTIONS}}</select></label>
-      <label>HN discussion or project source <span class="optional">(optional)</span><input name="source" type="url" maxlength="1000" placeholder="https://news.ycombinator.com/item?id=…"></label>
+      <label>Website URL<input name="url" type="url" required maxlength="1000" placeholder="https://" autocomplete="url" autofocus></label>
+      <details class="optional-fields"><summary>Add a name or description <span>(optional)</span></summary><div><label>Site name<input name="name" maxlength="60" autocomplete="off" placeholder="Leave blank to auto-fill"></label><label>One-line description<input name="description" maxlength="100" placeholder="What makes it useful?"></label></div></details>
       <div class="form-trap" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
-      <p class="submission-notice">Suggestions and moderation are public on GitHub. No email address is collected.</p>
-      <button class="submit-button" type="submit">Send for review ↗</button>
+      <button class="submit-button" type="submit">Send for review <span aria-hidden="true">↗</span></button>
+      <p class="submission-notice">No account or email needed. Suggestions are reviewed publicly on GitHub.</p>
     </form>
     <div id="submission-message" role="status" aria-live="polite" tabindex="-1" hidden></div>
   </dialog>

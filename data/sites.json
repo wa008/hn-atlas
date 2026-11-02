@@ -1,74 +1,6 @@
 {
   "reviewedOn": "2026-11-02",
   "reference": "https://github.com/cheeaun/awesome-hacker-news",
-  "groups": [
-    {
-      "id": "explore",
-      "name": "Explore",
-      "categories": [
-        {
-          "id": "books",
-          "name": "Books"
-        },
-        {
-          "id": "videos",
-          "name": "Videos"
-        },
-        {
-          "id": "games",
-          "name": "Games"
-        },
-        {
-          "id": "knowledge",
-          "name": "Knowledge"
-        }
-      ]
-    },
-    {
-      "id": "read",
-      "name": "Read",
-      "categories": [
-        {
-          "id": "blogs",
-          "name": "Blogs"
-        },
-        {
-          "id": "readers",
-          "name": "Readers"
-        },
-        {
-          "id": "digests",
-          "name": "Daily digests"
-        }
-      ]
-    },
-    {
-      "id": "tools",
-      "name": "Tools",
-      "categories": [
-        {
-          "id": "products",
-          "name": "Product discovery"
-        },
-        {
-          "id": "search",
-          "name": "Search"
-        },
-        {
-          "id": "rss",
-          "name": "RSS"
-        },
-        {
-          "id": "jobs",
-          "name": "Jobs"
-        },
-        {
-          "id": "terminal",
-          "name": "Terminal"
-        }
-      ]
-    }
-  ],
   "sites": [
     {
       "id": "hackerbooks",
@@ -411,6 +343,56 @@
         "url": "https://news.ycombinator.com/item?id=48530382"
       },
       "domainRating": null
+    }
+  ],
+  "categories": [
+    {
+      "id": "books",
+      "name": "Books"
+    },
+    {
+      "id": "videos",
+      "name": "Videos"
+    },
+    {
+      "id": "games",
+      "name": "Games"
+    },
+    {
+      "id": "knowledge",
+      "name": "Knowledge"
+    },
+    {
+      "id": "blogs",
+      "name": "Blogs"
+    },
+    {
+      "id": "readers",
+      "name": "Readers"
+    },
+    {
+      "id": "digests",
+      "name": "Daily digests"
+    },
+    {
+      "id": "products",
+      "name": "Product discovery"
+    },
+    {
+      "id": "search",
+      "name": "Search"
+    },
+    {
+      "id": "rss",
+      "name": "RSS"
+    },
+    {
+      "id": "jobs",
+      "name": "Jobs"
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal"
     }
   ]
 }
