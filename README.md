@@ -1,10 +1,10 @@
-# Awesome HN
+# HN Atlas
 
 A compact, English-language directory of active Hacker News projects.
 
-**[Browse the directory →](https://awesome-hn.pages.dev)**
+**[Browse the directory →](https://hn-atlas.pages.dev)**
 
-Three columns, two levels of categories, short descriptions, and search. No accounts, submission form, analytics, or runtime dependencies. All links work without JavaScript.
+Categories flow vertically, with short, bold descriptions and search. Visitors can suggest a site without an account. Moderation happens in GitHub; approved changes deploy automatically. Directory links work without JavaScript.
 
 ## Directory
 
@@ -18,6 +18,7 @@ Three columns, two levels of categories, short descriptions, and search. No acco
 #### Videos
 
 - [HackerTube](https://hackertube.org/) — YouTube videos discovered in HN recommendations.
+- [HackerFilms](https://hackerfilms.pages.dev/) — Movies discussed on HN, linked to their conversations.
 
 #### Games
 
@@ -26,12 +27,14 @@ Three columns, two levels of categories, short descriptions, and search. No acco
 #### Knowledge
 
 - [WikiHack](https://wikihack.netlify.app/) — Wikipedia rabbit holes linked in HN comments.
+- [OrangeCrumbs](https://www.orangecrumbs.com/) — HN link history, Wikipedia discoveries, and a hall of fame.
 
 ### Read
 
 #### Blogs
 
 - [blogs.hn](https://blogs.hn/) — Personal blogs from HN readers, with feeds.
+- [HackerBlogs](https://hackerblogs.app/) — Find the blogs and writers HN keeps sharing.
 
 #### Readers
 
@@ -43,6 +46,12 @@ Three columns, two levels of categories, short descriptions, and search. No acco
 - [Hacker News Daily](https://www.daemonology.net/hn-daily/) — Ten top stories a day, without repeat links.
 
 ### Tools
+
+#### Product discovery
+
+- [HackerProducts](https://hackerproducts.pages.dev/) — Software HN users recommend, with the comments behind it.
+- [HackerTools](https://shouvik12.github.io/hackertools/) — Developer tools recommended by distinct HN commenters.
+- [trustmebro · HN](https://www.trustmebro.reviews/r/hackernews) — Explore product opinions extracted from HN discussions.
 
 #### Search
 
@@ -73,7 +82,7 @@ npm run check
 
 The build validates the data, renders a static website into `dist/`, and regenerates the directory section above. Commit the source data and generated README together. `dist/` is intentionally ignored. The data is also published as `/data.json`.
 
-Each site needs a name, URL, short English description, category, dated activity evidence, and a sourced popularity signal. See [curation policy](CURATION.md) and [contributing](CONTRIBUTING.md).
+Each site needs a name, URL, short English description, category, dated activity evidence, and a sourced popularity signal or an explicit editorial rationale. See [curation policy](CURATION.md) and [contributing](CONTRIBUTING.md).
 
 ## Local preview
 
@@ -97,7 +106,7 @@ For a Git-integrated Pages project:
 | Root directory | `/` |
 | Node.js | `22` or newer |
 
-Cloudflare installs the locked development dependency automatically. Pushes to `main` rebuild the directory. Pull requests are validated by GitHub Actions; there is no automatic site-submission feature.
+Cloudflare installs the locked development dependency automatically. Pushes to `main` rebuild the directory. Pull requests are validated by GitHub Actions. Anonymous suggestions are reviewed through GitHub Issues; approved suggestions are committed automatically.
 
 For an authenticated local deployment:
 
@@ -106,7 +115,7 @@ npx wrangler login
 npm run deploy
 ```
 
-No Cloudflare credentials belong in this repository.
+No Cloudflare credentials belong in this repository. The Pages project binds `DB` to the `hn-atlas-submissions` D1 database declared in `wrangler.jsonc`. Apply migrations with `npx wrangler d1 migrations apply hn-atlas-submissions --remote`. For local testing, apply them with `--local` before `npm run dev`.
 
 ## References
 
@@ -114,3 +123,18 @@ No Cloudflare credentials belong in this repository.
 - [HackerBooks discussion](https://news.ycombinator.com/item?id=50326821) and [HackerHype](http://epestr.com/hackerhype/) — discovery sources for newer HN collections.
 
 Descriptions are independently written. This directory is not affiliated with Hacker News or Y Combinator. Code and original descriptions: [MIT](LICENSE). Listed projects retain their own licenses.
+
+## Anonymous suggestions and review
+
+1. A visitor uses **Suggest a site**, without a login or email address.
+2. The Pages Function validates the suggestion and stores a receipt in D1. Same-day duplicate URLs are deduplicated; a hashed-IP limit and a honeypot reduce spam. No submission URL is fetched by the server.
+3. [`Review site submissions`](.github/workflows/submissions.yml) checks the queue on pushes, manual runs, and a five-minute schedule. GitHub may delay scheduled jobs. The workflow creates an Issue labeled `submission` and includes an editable JSON proposal.
+4. A maintainer checks the URL, description, category, and source. Edit the JSON in the Issue if needed, then apply **approved**. This is an explicit editorial sign-off on availability and relevance.
+5. The workflow validates the proposal, runs the repository checks, commits `data/sites.json` and the generated README to `main`, marks the Issue `published`, and closes it. Cloudflare's Git integration automatically builds and publishes the commit.
+6. Apply **rejected** to close a suggestion without publishing. If publication fails, the workflow leaves the Issue open with a retry instruction.
+
+Only repository administrators or users with write/maintain permission can approve. A closed Issue is not imported again. Suggestions cannot change source files, workflow files, or deployment settings.
+
+The queue is private to the trusted GitHub workflow: short-lived GitHub OIDC tokens are verified against GitHub's signing keys and the exact repository ID, main branch, audience, and workflow path. No long-lived GitHub or Cloudflare token is stored for this flow. Only the submission form is anonymous; repository moderation still uses GitHub permissions.
+
+The repository name remains `wa008/awesome-hn` so existing repository links remain valid. The product and production domain are **HN Atlas** and **hn-atlas.pages.dev**. The old Pages domain redirects to the new domain.

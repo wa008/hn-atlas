@@ -47,6 +47,10 @@
       "name": "Tools",
       "categories": [
         {
+          "id": "products",
+          "name": "Product discovery"
+        },
+        {
           "id": "search",
           "name": "Search"
         },
@@ -291,6 +295,120 @@
         "type": "github_stars",
         "value": 2106,
         "url": "https://github.com/bensadeh/circumflex"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hackerblogs",
+      "name": "HackerBlogs",
+      "category": "blogs",
+      "url": "https://hackerblogs.app/",
+      "description": "Find the blogs and writers HN keeps sharing.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-11-02",
+        "url": "https://news.ycombinator.com/item?id=50334295",
+        "note": "New blog discovery tool; current catalog and launch verified."
+      },
+      "popularity": {
+        "type": "editor_pick",
+        "url": "https://news.ycombinator.com/item?id=50334295",
+        "note": "Emerging project selected from the HackerBooks discussion; no popularity threshold or DR score is claimed."
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hackerproducts",
+      "name": "HackerProducts",
+      "category": "products",
+      "url": "https://hackerproducts.pages.dev/",
+      "description": "Software HN users recommend, with the comments behind it.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-11-02",
+        "url": "https://news.ycombinator.com/item?id=50339049",
+        "note": "New software catalog shared by its creator in the reference discussion."
+      },
+      "popularity": {
+        "type": "editor_pick",
+        "url": "https://news.ycombinator.com/item?id=50339049",
+        "note": "Emerging project selected from the HackerBooks discussion; no popularity threshold or DR score is claimed."
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hackertools",
+      "name": "HackerTools",
+      "category": "products",
+      "url": "https://shouvik12.github.io/hackertools/",
+      "description": "Developer tools recommended by distinct HN commenters.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-11-02",
+        "url": "https://news.ycombinator.com/item?id=50328349",
+        "note": "Creator announced the tool in the reference thread; catalog and source checked."
+      },
+      "popularity": {
+        "type": "editor_pick",
+        "url": "https://news.ycombinator.com/item?id=50328349",
+        "note": "Emerging project selected from the HackerBooks discussion; no popularity threshold or DR score is claimed."
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hackerfilms",
+      "name": "HackerFilms",
+      "category": "videos",
+      "url": "https://hackerfilms.pages.dev/",
+      "description": "Movies discussed on HN, linked to their conversations.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-11-02",
+        "url": "https://news.ycombinator.com/item?id=50335470",
+        "note": "Film discovery project shared in the reference thread; catalog checked."
+      },
+      "popularity": {
+        "type": "editor_pick",
+        "url": "https://news.ycombinator.com/item?id=50335470",
+        "note": "Emerging project selected from the HackerBooks discussion; no popularity threshold or DR score is claimed."
+      },
+      "domainRating": null
+    },
+    {
+      "id": "trustmebro",
+      "name": "trustmebro · HN",
+      "category": "products",
+      "url": "https://www.trustmebro.reviews/r/hackernews",
+      "description": "Explore product opinions extracted from HN discussions.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-11-02",
+        "url": "https://news.ycombinator.com/item?id=50333184",
+        "note": "HN-specific product opinion index shared in the reference thread."
+      },
+      "popularity": {
+        "type": "editor_pick",
+        "url": "https://news.ycombinator.com/item?id=50333184",
+        "note": "Emerging project selected from the HackerBooks discussion; no popularity threshold or DR score is claimed."
+      },
+      "domainRating": null
+    },
+    {
+      "id": "orangecrumbs",
+      "name": "OrangeCrumbs",
+      "category": "knowledge",
+      "url": "https://www.orangecrumbs.com/",
+      "description": "HN link history, Wikipedia discoveries, and a hall of fame.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-06-14",
+        "url": "https://news.ycombinator.com/item?id=48530382",
+        "note": "Launched within the review window; live collection checked again on November 2."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 140,
+        "url": "https://news.ycombinator.com/item?id=48530382"
       },
       "domainRating": null
     }

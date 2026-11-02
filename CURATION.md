@@ -9,7 +9,7 @@ This is a small selection, not an exhaustive copy of the reference list.
 1. A direct relationship to Hacker News, with a clear purpose.
 2. A working destination checked during review. HTTP 200 alone does not establish activity.
 3. Dated activity evidence within 180 days of the review: a launch, source update, release, or genuinely fresh live content.
-4. At least **50 HN points on a relevant submission**, or **100 GitHub stars**. HN's linked search service is an explicitly recorded service exception.
+4. Established projects normally have **50 HN points on a relevant submission**, or **100 GitHub stars**. Emerging discoveries from the reference discussion can be selected with a dated, sourced editorial rationale (`editor_pick`); this is not a claim of high popularity. HN's linked search service is an explicitly recorded service exception.
 
 These are initial editorial thresholds, not an objective quality score. Historical HN points show past attention, not current traffic. Code maintenance and content updates are recorded separately: a live RSS service can deliver fresh posts while its source code has not changed recently. Every included item has a dated explanation and source in `data/sites.json`.
 
@@ -27,11 +27,8 @@ If verified DR data is added, record an object with `value` (0–100), `url` (ev
 
 | Candidate | Reason |
 | --- | --- |
-| HackerBlogs | Recent and accessible, but its launch had 4 HN points at review; no qualifying popularity signal verified. |
-| HackerTools | Source recently updated, but had 0 GitHub stars; the referenced HN item is a comment, not a scored launch submission. |
 | HN Showcase | Live project, but 2 GitHub stars and 3 launch points at review. |
 | HN Games (`hn-games.marcolabarile.me`) | Source active, but 3 GitHub stars; a commonly linked HN submission actually points to a different game site. |
-| HackerFilms / HackerProducts | Accessible, but insufficient verified popularity evidence for this edition. |
 | Hacker Newsletter | Established audience claimed on the site, but a dated recent issue was not verified during this review. |
 | HN Theater / HN Books / HN Academy | Available, but a current-year navigation label does not establish fresh catalog updates; not retained without dated evidence. |
 | HackerWeb | Popular source repository, but last source push was in April 2024; a recent release or maintained deployment was not established. |
@@ -48,3 +45,9 @@ Excluded is not the same as abandoned or low quality. A later review can restore
 - Record evidence URLs and dates. Avoid using another product's popularity.
 - Keep descriptions factual and under 100 characters.
 - Run `npm run check`, then commit the data and regenerated README.
+
+## Emerging projects and moderation
+
+HackerBlogs, HackerProducts, HackerTools, HackerFilms, and the HN section of trustmebro were directly inspected after discovery in the reference discussion. They are now included as emerging editorial selections, with links to their original HN comments or launch posts. Their inclusion does not assert that they meet the established-project popularity thresholds.
+
+A maintainer-approved suggestion records `activity.type: review`, the review date, reviewer, and Issue URL. That records a human availability/relevance review, not a source-code release or automatically verified traffic metric. Anonymous suggestions remain outside the directory until a maintainer explicitly approves.
