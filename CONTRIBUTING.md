@@ -11,3 +11,7 @@ Suggest a site without an account using the form on [HN Atlas](https://hn-atlas.
 Please do not add tracking parameters, affiliate links, unverifiable metrics, or promotional copy. Small directories work best when each entry has a clear use.
 
 For Issue moderation: inspect the URL and evidence, edit the JSON proposal as needed, then add `approved` to publish or `rejected` to close. Only maintainers with write access may publish. Approval records an editorial review; it does not invent a popularity or Domain Rating score.
+
+Anonymous submissions return a receipt immediately. The receipt links to the review queue until GitHub Actions creates the Issue; scheduled runs may be delayed by GitHub. Repeating the same URL on the same day returns the original receipt.
+
+When adding a new category, update both `data/sites.json` and `lib/submission.js`. The build checks that the public form and directory use the same categories.
