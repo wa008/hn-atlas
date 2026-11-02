@@ -15,3 +15,5 @@ For Issue moderation: inspect the URL and any auto-filled text. **Set `category`
 Anonymous submissions return a receipt immediately. The receipt links to the review queue until GitHub Actions creates the Issue; scheduled runs may be delayed by GitHub. Repeating the same URL on the same day returns the original receipt.
 
 When adding a new category, update both `data/sites.json` and `lib/submission.js`. The build checks that the public form and directory use the same categories.
+
+Auto-filled names and descriptions are drafts from website metadata, not verified recommendations. If metadata is unavailable, the draft uses the hostname. Category is never auto-assigned: a maintainer must set it before publishing.
