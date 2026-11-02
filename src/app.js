@@ -5,7 +5,7 @@ const categories=[...document.querySelectorAll('.category')];
 const categorySelect=document.querySelector('#category-select');
 const status=document.querySelector('#result-status');
 const url=new URL(location.href);
-const legacyCategories={knowledge:'books',blogs:'reading',digests:'reading',terminal:'readers',rss:'search'};
+const legacyCategories={blogs:'reading',digests:'reading',terminal:'readers',rss:'search'};
 const requested=url.searchParams.get('category');
 const initial=Object.hasOwn(legacyCategories,requested)?legacyCategories[requested]:requested;
 let selected=buttons.some(button=>button.dataset.filter===initial)?initial:'all';
@@ -43,7 +43,7 @@ submitForm.addEventListener('submit', async event => {
     const note = document.createElement('p'); note.textContent = 'Suggestions are synced to GitHub periodically. A maintainer will review yours before it appears here.';
     submissionMessage.append(heading,note);
     if (result.id) {
-      const link = document.createElement('a'); link.textContent = 'View the review queue ↗'; link.href = `https://github.com/wa008/awesome-hn/issues?q=${encodeURIComponent('in:body '+result.id)}`; link.target='_blank';link.rel='noopener noreferrer';submissionMessage.append(link);
+      const link = document.createElement('a'); link.textContent = 'View the review queue ↗'; link.href = `https://github.com/wa008/hn-atlas/issues?q=${encodeURIComponent('in:body '+result.id)}`; link.target='_blank';link.rel='noopener noreferrer';submissionMessage.append(link);
       let attempts = 0; const timer = setInterval(async () => { if (++attempts > 12 || !submitDialog.open) { clearInterval(timer); return; } try { const status = await (await fetch('/api/submissions?id='+encodeURIComponent(result.id))).json(); if (status.issueUrl) { link.href = status.issueUrl; link.textContent = 'View your GitHub review ↗'; clearInterval(timer); } } catch {} },10000);
     }
     const another = document.createElement('button'); another.className = 'suggest-another'; another.type = 'button'; another.textContent = 'Suggest another site'; another.addEventListener('click', () => { submitForm.reset(); submitForm.hidden = false; submissionMessage.hidden = true; submitForm.querySelector('[name="name"]').focus(); }); submissionMessage.append(another);

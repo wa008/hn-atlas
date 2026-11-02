@@ -9,13 +9,11 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 ## Directory
 
 <!-- DIRECTORY:START -->
-### Books & knowledge
+### Books
 
 - [HackerBooks](https://hackerbooks.org/) — Books mentioned on HN, with the original discussions.
-- [WikiHack](https://wikihack.netlify.app/) — Wikipedia rabbit holes linked in HN comments.
-- [OrangeCrumbs](https://www.orangecrumbs.com/) — HN link history, Wikipedia discoveries, and a hall of fame.
 
-### Videos & film
+### Videos
 
 - [HackerTube](https://hackertube.org/) — YouTube videos discovered in HN recommendations.
 - [HackerFilms](https://hackerfilms.pages.dev/) — Movies discussed on HN, linked to their conversations.
@@ -23,6 +21,11 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 ### Games
 
 - [HN Arcade](https://hnarcade.com/games/category/games) — Independent games shared by the HN community.
+
+### Knowledge
+
+- [WikiHack](https://wikihack.netlify.app/) — Wikipedia rabbit holes linked in HN comments.
+- [OrangeCrumbs](https://www.orangecrumbs.com/) — HN link history, Wikipedia discoveries, and a hall of fame.
 
 ### Blogs & digests
 

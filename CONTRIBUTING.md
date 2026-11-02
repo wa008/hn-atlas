@@ -18,4 +18,4 @@ When adding a new category, update both `data/sites.json` and `lib/submission.js
 
 Auto-filled names and descriptions are drafts from website metadata, not verified recommendations. If metadata is unavailable, the draft uses the hostname. Category is never auto-assigned: a maintainer must set it before publishing.
 
-The directory uses eight categories. Older category IDs (`knowledge`, `blogs`, `digests`, `terminal`, `rss`) are normalized to their merged categories so pending suggestions remain reviewable.
+The directory uses nine categories. Older category IDs (`blogs`, `digests`, `terminal`, `rss`) are normalized to their merged categories so pending suggestions remain reviewable.

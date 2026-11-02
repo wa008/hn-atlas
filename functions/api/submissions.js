@@ -5,7 +5,7 @@ export async function onRequestGet({request,env}) {
   const id = new URL(request.url).searchParams.get('id');
   if(!/^[a-f0-9-]{36}$/.test(id||'')) return json({error:'A receipt ID is required.'},400);
   const row = await env.DB.prepare('SELECT status, github_issue FROM submissions WHERE id = ?').bind(id).first();
-  return row ? json({status:row.status,issueUrl:row.github_issue?`https://github.com/wa008/awesome-hn/issues/${row.github_issue}`:null}) : json({error:'Receipt not found.'},404);
+  return row ? json({status:row.status,issueUrl:row.github_issue?`https://github.com/wa008/hn-atlas/issues/${row.github_issue}`:null}) : json({error:'Receipt not found.'},404);
 }
 export async function onRequestPost({request,env}) {
   if(request.headers.get('Origin') && request.headers.get('Origin') !== new URL(request.url).origin) return json({error:'Submit from HN Atlas.'},403);

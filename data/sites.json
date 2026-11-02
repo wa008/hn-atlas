@@ -62,7 +62,7 @@
     {
       "id": "wikihack",
       "name": "WikiHack",
-      "category": "books",
+      "category": "knowledge",
       "url": "https://wikihack.netlify.app/",
       "description": "Wikipedia rabbit holes linked in HN comments.",
       "activity": {
@@ -328,7 +328,7 @@
     {
       "id": "orangecrumbs",
       "name": "OrangeCrumbs",
-      "category": "books",
+      "category": "knowledge",
       "url": "https://www.orangecrumbs.com/",
       "description": "HN link history, Wikipedia discoveries, and a hall of fame.",
       "activity": {
@@ -348,15 +348,19 @@
   "categories": [
     {
       "id": "books",
-      "name": "Books & knowledge"
+      "name": "Books"
     },
     {
       "id": "videos",
-      "name": "Videos & film"
+      "name": "Videos"
     },
     {
       "id": "games",
       "name": "Games"
+    },
+    {
+      "id": "knowledge",
+      "name": "Knowledge"
     },
     {
       "id": "reading",

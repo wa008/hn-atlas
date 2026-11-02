@@ -2,7 +2,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {validateSubmission,CATEGORY_IDS} from '../lib/submission.js';
 import {enrichSubmission} from './site-metadata.mjs';
-const repo='wa008/awesome-hn';
+const repo=process.env.GITHUB_REPOSITORY||'wa008/hn-atlas';
 const token=process.env.GH_TOKEN;if(!token)throw new Error('GitHub workflow token required');
 const event=JSON.parse(await readFile(process.env.GITHUB_EVENT_PATH,'utf8'));
 const siteOrigin=process.env.SITE_ORIGIN||'https://hn-atlas.pages.dev';
