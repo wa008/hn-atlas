@@ -1,0 +1,298 @@
+{
+  "reviewedOn": "2026-11-02",
+  "reference": "https://github.com/cheeaun/awesome-hacker-news",
+  "groups": [
+    {
+      "id": "explore",
+      "name": "Explore",
+      "categories": [
+        {
+          "id": "books",
+          "name": "Books"
+        },
+        {
+          "id": "videos",
+          "name": "Videos"
+        },
+        {
+          "id": "games",
+          "name": "Games"
+        },
+        {
+          "id": "knowledge",
+          "name": "Knowledge"
+        }
+      ]
+    },
+    {
+      "id": "read",
+      "name": "Read",
+      "categories": [
+        {
+          "id": "blogs",
+          "name": "Blogs"
+        },
+        {
+          "id": "readers",
+          "name": "Readers"
+        },
+        {
+          "id": "digests",
+          "name": "Daily digests"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "Tools",
+      "categories": [
+        {
+          "id": "search",
+          "name": "Search"
+        },
+        {
+          "id": "rss",
+          "name": "RSS"
+        },
+        {
+          "id": "jobs",
+          "name": "Jobs"
+        },
+        {
+          "id": "terminal",
+          "name": "Terminal"
+        }
+      ]
+    }
+  ],
+  "sites": [
+    {
+      "id": "hackerbooks",
+      "name": "HackerBooks",
+      "category": "books",
+      "url": "https://hackerbooks.org/",
+      "description": "Books mentioned on HN, with the original discussions.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-11-01",
+        "url": "https://news.ycombinator.com/item?id=50326821",
+        "note": "Recent launch; live catalog verified on the review date."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 1780,
+        "url": "https://news.ycombinator.com/item?id=50326821"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hackertube",
+      "name": "HackerTube",
+      "category": "videos",
+      "url": "https://hackertube.org/",
+      "description": "YouTube videos discovered in HN recommendations.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-10-31",
+        "url": "https://karpathy.bearblog.dev/hacker-tube/",
+        "note": "Recent launch by Andrej Karpathy; live site verified."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 2783,
+        "url": "https://news.ycombinator.com/item?id=50319510"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hn-arcade",
+      "name": "HN Arcade",
+      "category": "games",
+      "url": "https://hnarcade.com/games/category/games",
+      "description": "Independent games shared by the HN community.",
+      "activity": {
+        "type": "repository",
+        "date": "2026-11-02",
+        "url": "https://github.com/andrewgy8/hnarcade",
+        "note": "Source updated November 2, 2026; live game catalog verified."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 352,
+        "url": "https://news.ycombinator.com/item?id=46793693"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "wikihack",
+      "name": "WikiHack",
+      "category": "knowledge",
+      "url": "https://wikihack.netlify.app/",
+      "description": "Wikipedia rabbit holes linked in HN comments.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-11-02",
+        "url": "https://news.ycombinator.com/item?id=50333339",
+        "note": "Recent launch; live site verified."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 324,
+        "url": "https://news.ycombinator.com/item?id=50333339"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "blogs-hn",
+      "name": "blogs.hn",
+      "category": "blogs",
+      "url": "https://blogs.hn/",
+      "description": "Personal blogs from HN readers, with feeds.",
+      "activity": {
+        "type": "repository",
+        "date": "2026-10-31",
+        "url": "https://github.com/surprisetalk/blogs.hn",
+        "note": "Source updated October 31, 2026; directory includes 2026 posts."
+      },
+      "popularity": {
+        "type": "github_stars",
+        "value": 217,
+        "url": "https://github.com/surprisetalk/blogs.hn"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hckr-news",
+      "name": "hckr news",
+      "category": "readers",
+      "url": "https://hckrnews.com/",
+      "description": "A compact, chronological view of Hacker News.",
+      "activity": {
+        "type": "content",
+        "date": "2026-11-02",
+        "url": "https://hckrnews.com/",
+        "note": "Current November 2 front-page stories verified. This records content freshness, not a source-code update."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 171,
+        "url": "https://news.ycombinator.com/item?id=6612799"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hacki",
+      "name": "Hacki",
+      "category": "readers",
+      "url": "https://github.com/Livinglist/Hacki",
+      "description": "An open-source HN reader for iOS and Android.",
+      "activity": {
+        "type": "release",
+        "date": "2026-10-11",
+        "url": "https://github.com/Livinglist/Hacki/releases/tag/v3.8.2",
+        "note": "Version 3.8.2 released October 11, 2026; repository updated November 2."
+      },
+      "popularity": {
+        "type": "github_stars",
+        "value": 1639,
+        "url": "https://github.com/Livinglist/Hacki"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hn-daily",
+      "name": "Hacker News Daily",
+      "category": "digests",
+      "url": "https://www.daemonology.net/hn-daily/",
+      "description": "Ten top stories a day, without repeat links.",
+      "activity": {
+        "type": "content",
+        "date": "2026-11-02",
+        "url": "https://www.daemonology.net/hn-daily/",
+        "note": "Latest digest posted November 2, 2026, covering November 1."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 54,
+        "url": "https://news.ycombinator.com/item?id=8867272"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hn-search",
+      "name": "HN Search",
+      "category": "search",
+      "url": "https://hn.algolia.com/",
+      "description": "Full-text search across HN stories and comments.",
+      "activity": {
+        "type": "content",
+        "date": "2026-11-02",
+        "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story",
+        "note": "Search index returned current-day stories on the review date."
+      },
+      "popularity": {
+        "type": "official_service",
+        "url": "https://hn.algolia.com/about",
+        "note": "Algolia's HN search service, linked from Hacker News."
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hn-rss",
+      "name": "HN RSS",
+      "category": "rss",
+      "url": "https://hnrss.github.io/",
+      "description": "Custom feeds for keywords, points, and replies.",
+      "activity": {
+        "type": "content",
+        "date": "2026-11-02",
+        "url": "https://hnrss.org/frontpage",
+        "note": "RSS channel published current November 2 items. Source code last changed in 2024; content delivery remains active."
+      },
+      "popularity": {
+        "type": "github_stars",
+        "value": 621,
+        "url": "https://github.com/hnrss/hnrss"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hn-hiring",
+      "name": "HN Hiring",
+      "category": "jobs",
+      "url": "https://hnhiring.com/",
+      "description": "Search jobs from the monthly Who Is Hiring threads.",
+      "activity": {
+        "type": "content",
+        "date": "2026-11-02",
+        "url": "https://hnhiring.com/",
+        "note": "November 2026 jobs visible; page explicitly reports updated November 2."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 111,
+        "url": "https://news.ycombinator.com/item?id=42858947"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "circumflex",
+      "name": "Circumflex",
+      "category": "terminal",
+      "url": "https://github.com/bensadeh/circumflex",
+      "description": "Read HN from your terminal, with article previews.",
+      "activity": {
+        "type": "release",
+        "date": "2026-10-04",
+        "url": "https://github.com/bensadeh/circumflex/releases/tag/5.1",
+        "note": "Version 5.1 released October 4, 2026; repository updated November 2."
+      },
+      "popularity": {
+        "type": "github_stars",
+        "value": 2106,
+        "url": "https://github.com/bensadeh/circumflex"
+      },
+      "domainRating": null
+    }
+  ]
+}
