@@ -1,6 +1,6 @@
 import {readFile,writeFile,mkdir,copyFile,rm} from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import {CATEGORY_IDS} from '../lib/submission.js';
+import {CATEGORY_IDS} from '../lib/categories.js';
 
 const data=JSON.parse(await readFile(new URL('../data/sites.json',import.meta.url),'utf8'));
 const escape=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));

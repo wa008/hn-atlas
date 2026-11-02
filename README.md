@@ -91,7 +91,7 @@ For a Git-integrated Pages project:
 | Root directory | `/` |
 | Node.js | `22` or newer |
 
-Cloudflare installs the locked development dependency automatically. Pushes to `main` rebuild the directory. Pull requests are validated by GitHub Actions. Anonymous suggestions are reviewed through GitHub Issues; approved suggestions are committed automatically.
+Cloudflare installs the locked development dependency automatically. Pushes to `main` rebuild the directory. Pull requests are validated by GitHub Actions.
 
 For an authenticated local deployment:
 
@@ -100,7 +100,16 @@ npx wrangler login
 npm run deploy
 ```
 
-No Cloudflare credentials belong in this repository. The Pages project binds `DB` to the `hn-atlas-submissions` D1 database declared in `wrangler.jsonc`. Apply migrations with `npx wrangler d1 migrations apply hn-atlas-submissions --remote`. For local testing, apply them with `--local` before `npm run dev`.
+## Suggesting a new site (Pull Request)
+
+We welcome suggestions! If you want to add a new site or update an existing entry, please open a Pull Request:
+
+1. Add your entry to [`data/sites.json`](data/sites.json).
+2. Check our [Curation Policy](CURATION.md) for criteria (active within 180 days, verifiable popularity or discussion source).
+3. Run `npm run check` to validate data schema and update the directory section in this README.
+4. Commit both files and submit your PR. GitHub Actions will test and verify the change automatically.
+
+For more details, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## References
 
@@ -108,18 +117,3 @@ No Cloudflare credentials belong in this repository. The Pages project binds `DB
 - [HackerBooks discussion](https://news.ycombinator.com/item?id=50326821) and [HackerHype](http://epestr.com/hackerhype/) — discovery sources for newer HN collections.
 
 Descriptions are independently written. This directory is not affiliated with Hacker News or Y Combinator. Code and original descriptions: [MIT](LICENSE). Listed projects retain their own licenses.
-
-## Anonymous suggestions and review
-
-1. A visitor submits only a **website URL**, without a login or email address. Site name and description are optional and shown alongside the URL using the same field layout. Category is assigned during moderation.
-2. The Pages Function validates the suggestion and stores a receipt in D1. Same-day duplicate URLs are deduplicated; a hashed-IP limit and a honeypot reduce spam. The public endpoint does not fetch the URL. A background GitHub job reads bounded HTML metadata using validated, pinned public IP addresses and checks redirects.
-3. [`Review site submissions`](.github/workflows/submissions.yml) checks the queue on pushes, manual runs, and a five-minute schedule. GitHub may delay scheduled jobs. The workflow fills missing name and description from Open Graph metadata, the page title, or a hostname fallback. It creates an Issue labeled `submission` with an editable JSON draft and identifies generated fields.
-4. A maintainer checks the generated text and URL, **sets a category** in the Issue JSON, and then applies **approved**. Missing category blocks publication. This is an explicit editorial sign-off on availability and relevance.
-5. The workflow validates the proposal, runs the repository checks, commits `data/sites.json` and the generated README to `main`, marks the Issue `published`, and closes it. Cloudflare's Git integration automatically builds and publishes the commit.
-6. Apply **rejected** to close a suggestion without publishing. If publication fails, the workflow leaves the Issue open with a retry instruction.
-
-Only repository administrators or users with write/maintain permission can approve. A closed Issue is not imported again. Suggestions cannot change source files, workflow files, or deployment settings.
-
-The queue is private to the trusted GitHub workflow: short-lived GitHub OIDC tokens are verified against GitHub's signing keys and the exact repository ID, main branch, audience, and workflow path. No long-lived GitHub or Cloudflare token is stored for this flow. Only the submission form is anonymous; repository moderation still uses GitHub permissions.
-
-The repository name remains `wa008/awesome-hn` so existing repository links remain valid. The product and production domain are **HN Atlas** and **hn-atlas.pages.dev**. The old Pages domain redirects to the new domain.

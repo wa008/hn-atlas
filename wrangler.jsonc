@@ -2,13 +2,5 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hn-atlas",
   "pages_build_output_dir": "./dist",
-  "compatibility_date": "2026-11-02",
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "hn-atlas-submissions",
-      "database_id": "341bed60-5916-4033-8adf-cc931c254348",
-      "migrations_dir": "migrations"
-    }
-  ]
+  "compatibility_date": "2026-11-02"
 }

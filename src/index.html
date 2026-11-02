@@ -16,7 +16,7 @@
     <header class="site-header">
       <a class="brand" href="/" aria-label="HN Atlas home"><svg class="brand-symbol" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16"/><path d="M20 1v5M20 34v5M1 20h5M34 20h5M14 26l4-12 8 12-8-4Z"/></svg><span>HN Atlas<span class="brand-dot">.</span></span></a>
       <span class="header-note">A community field guide</span>
-      <div class="header-links"><button id="open-submit" class="submit-link">Suggest a site <span aria-hidden="true">↗</span></button><a class="github-link" href="https://github.com/wa008/hn-atlas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+      <div class="header-links"><a class="github-link" href="https://github.com/wa008/hn-atlas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
     </header>
     <main>
       <div class="toolbar"><div><h1>Useful corners of Hacker News.</h1><p class="collection-label">Collected from the HN community. <span id="result-status" role="status" aria-live="polite">{{TOTAL}} sites</span></p></div><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" placeholder="Find something useful…" aria-label="Search sites" autocomplete="off"><kbd aria-hidden="true">/</kbd></label></div>
@@ -26,21 +26,7 @@
         <div class="directory-content"><div id="directory" class="directory">{{DIRECTORY}}</div><div class="empty" id="empty" hidden><h2>Nothing here just yet.</h2><p>Try another name or category.</p><button id="clear-search">Back to all sites ↗</button></div></div>
       </div>
     </main>
-    <footer><span class="footer-signature">HN Atlas <span aria-hidden="true">/</span> An independent directory</span><div><span>Reviewed <time datetime="{{REVIEW_DATE}}">{{DISPLAY_DATE}}</time></span><a href="https://github.com/wa008/hn-atlas/blob/main/CURATION.md" target="_blank" rel="noopener noreferrer">How we choose ↗</a></div></footer>
+    <footer><span class="footer-signature">HN Atlas <span aria-hidden="true">/</span> An independent directory</span><div><span>Reviewed <time datetime="{{REVIEW_DATE}}">{{DISPLAY_DATE}}</time></span><a href="https://github.com/wa008/hn-atlas#contributing" target="_blank" rel="noopener noreferrer">Submit via PR ↗</a><a href="https://github.com/wa008/hn-atlas/blob/main/CURATION.md" target="_blank" rel="noopener noreferrer">How we choose ↗</a></div></footer>
   </div>
-  <dialog id="submit-dialog" aria-labelledby="submit-title">
-    <button id="close-submit" class="close-dialog" aria-label="Close submission form">×</button>
-    <p class="dialog-kicker">ADD TO THE ATLAS</p><h2 id="submit-title">Found a good corner?</h2>
-    <p class="form-intro">Paste a URL. Add a name or description if you like.</p>
-    <form id="submit-form">
-      <label><span class="field-heading"><span>Website URL</span><span class="field-status">Required</span></span><input name="url" type="url" required maxlength="1000" placeholder="https://" autocomplete="url" autofocus></label>
-      <label><span class="field-heading"><span>Site name</span><span class="field-status">Optional</span></span><input name="name" maxlength="60" autocomplete="off" placeholder="Leave blank to auto-fill"></label>
-      <label><span class="field-heading"><span>One-line description</span><span class="field-status">Optional</span></span><input name="description" maxlength="100" placeholder="What makes it useful?"></label>
-      <div class="form-trap" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
-      <button class="submit-button" type="submit">Send for review <span aria-hidden="true">↗</span></button>
-      <p class="submission-notice">No account or email needed. Suggestions are reviewed publicly on GitHub.</p>
-    </form>
-    <div id="submission-message" role="status" aria-live="polite" tabindex="-1" hidden></div>
-  </dialog>
 </body>
 </html>

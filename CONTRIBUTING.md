@@ -1,21 +1,30 @@
 # Contributing
 
-Suggest a site without an account using the form on [HN Atlas](https://hn-atlas.pages.dev). Maintainers review suggestions in GitHub Issues. You can also contribute through a pull request.
+To suggest a new site or update an existing one in HN Atlas, open a Pull Request.
 
-1. Read [CURATION.md](CURATION.md).
-2. Add or update an entry in [`data/sites.json`](data/sites.json), including activity and popularity evidence.
-3. Reuse an existing flat category when possible. There are no primary category groups.
-4. Run `npm ci` and `npm run check`.
-5. Commit the data and regenerated README. Explain the change and link to the evidence in your pull request.
+## How to submit a Pull Request
 
-Please do not add tracking parameters, affiliate links, unverifiable metrics, or promotional copy. Small directories work best when each entry has a clear use.
+1. Read [CURATION.md](CURATION.md) for inclusion criteria.
+2. Add your entry to [`data/sites.json`](data/sites.json).
+3. Assign one of the valid categories:
+   - `books` (Books)
+   - `videos` (Videos)
+   - `games` (Games)
+   - `knowledge` (Knowledge)
+   - `reading` (Blogs & digests)
+   - `readers` (HN readers)
+   - `products` (Product discovery)
+   - `search` (Search & feeds)
+   - `jobs` (Jobs)
+4. Provide verifiable evidence:
+   - **Activity**: Recent launch, commit, release, or article within 180 days.
+   - **Popularity**: HN points (>=50), GitHub stars (>=100), or an editorial rationale.
+5. Run the repository checks and build:
+   ```sh
+   npm ci
+   npm run check
+   ```
+   This formats the data, checks schema and constraints, and regenerates the directory in `README.md`.
+6. Commit `data/sites.json` and `README.md`, then submit your Pull Request. GitHub Actions will validate the build automatically.
 
-For Issue moderation: inspect the URL and any auto-filled text. **Set `category` to an allowed category ID before approving.** Name and description can be edited or filled from metadata. Add `approved` to publish or `rejected` to close. Only maintainers with write access may publish. Approval records an editorial review; it does not invent a popularity or Domain Rating score.
-
-Anonymous submissions return a receipt immediately. The receipt links to the review queue until GitHub Actions creates the Issue; scheduled runs may be delayed by GitHub. Repeating the same URL on the same day returns the original receipt.
-
-When adding a new category, update both `data/sites.json` and `lib/submission.js`. The build checks that the public form and directory use the same categories.
-
-Auto-filled names and descriptions are drafts from website metadata, not verified recommendations. If metadata is unavailable, the draft uses the hostname. Category is never auto-assigned: a maintainer must set it before publishing.
-
-The directory uses nine categories. Older category IDs (`blogs`, `digests`, `terminal`, `rss`) are normalized to their merged categories so pending suggestions remain reviewable.
+Please do not include tracking parameters, affiliate links, or promotional marketing copy.
