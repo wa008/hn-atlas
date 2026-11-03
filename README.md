@@ -26,6 +26,7 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 
 - [WikiHack](https://wikihack.netlify.app/) — Wikipedia rabbit holes linked in HN comments.
 - [OrangeCrumbs](https://www.orangecrumbs.com/) — HN link history, Wikipedia discoveries, and a hall of fame.
+- [Hacker News Trends](https://hackernewstrends.com/) — Chart how topics, tools, and people trended over 18 years of HN.
 
 ### Blogs & digests
 
@@ -39,6 +40,7 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 - [hckr news](https://hckrnews.com/) — A compact, chronological view of Hacker News.
 - [Hacki](https://github.com/Livinglist/Hacki) — An open-source HN reader for iOS and Android.
 - [Circumflex](https://github.com/bensadeh/circumflex) — Read HN from your terminal, with article previews.
+- [The Front Page](https://thefrontpage.dev/) — A newspaper-style front page for Hacker News.
 
 ### Product discovery
 
@@ -50,6 +52,7 @@ A flat category index, editorial typography, clear descriptions, and search. Vis
 - [HN Search](https://hn.algolia.com/) — Full-text search across HN stories and comments.
 - [HN RSS](https://hnrss.github.io/) — Custom feeds for keywords, points, and replies.
 - [F5Bot](https://f5bot.com/) — Email alerts when your keywords are mentioned on Hacker News.
+- [HNRelevant](https://github.com/imdj/HNRelevant) — Related submissions injected directly into discussion threads.
 
 ### Jobs
 

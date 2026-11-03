@@ -1,6 +1,6 @@
 # Curation
 
-Last reviewed: **November 2, 2026**.
+Last reviewed: **November 3, 2026**.
 
 This is a small selection, not an exhaustive copy of the reference list.
 

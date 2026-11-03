@@ -1,5 +1,5 @@
 {
-  "reviewedOn": "2026-11-02",
+  "reviewedOn": "2026-11-03",
   "reference": "https://github.com/cheeaun/awesome-hacker-news",
   "sites": [
     {
@@ -360,6 +360,63 @@
         "type": "hn_points",
         "value": 140,
         "url": "https://news.ycombinator.com/item?id=48530382"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "the-front-page",
+      "name": "The Front Page",
+      "category": "readers",
+      "url": "https://thefrontpage.dev/",
+      "description": "A newspaper-style front page for Hacker News.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-05-25",
+        "url": "https://news.ycombinator.com/item?id=48271127",
+        "note": "Launched within the review window; live newspaper edition verified on review date."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 434,
+        "url": "https://news.ycombinator.com/item?id=48271127"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hn-trends",
+      "name": "Hacker News Trends",
+      "category": "knowledge",
+      "url": "https://hackernewstrends.com/",
+      "description": "Chart how topics, tools, and people trended over 18 years of HN.",
+      "activity": {
+        "type": "launch",
+        "date": "2026-06-25",
+        "url": "https://news.ycombinator.com/item?id=48673671",
+        "note": "Launched within the review window; live 18-year search catalog verified."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 822,
+        "url": "https://news.ycombinator.com/item?id=48673671"
+      },
+      "domainRating": null
+    },
+    {
+      "id": "hn-relevant",
+      "name": "HNRelevant",
+      "category": "search",
+      "url": "https://github.com/imdj/HNRelevant",
+      "description": "Related submissions injected directly into discussion threads.",
+      "activity": {
+        "type": "repository",
+        "date": "2026-06-21",
+        "url": "https://github.com/imdj/HNRelevant",
+        "note": "Repository updated June 2026; live extensions verified on review date."
+      },
+      "popularity": {
+        "type": "hn_points",
+        "value": 122,
+        "url": "https://news.ycombinator.com/item?id=44078024"
       },
       "domainRating": null
     }
